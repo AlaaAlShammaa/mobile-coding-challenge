@@ -53,7 +53,7 @@ class ApiModule {
         httpClient.cache(cache)
         httpClient.addInterceptor(logging)
         val dateTime: DateTime = DateTime.now().minusDays(30)
-        val date: String = "created:>${dateTime.year().get()}-${dateTime.monthOfYear().get()}-${dateTime.dayOfMonth().get()}"
+        val date = "created:>${dateTime.year().get()}-${dateTime.monthOfYear().get()}-${dateTime.dayOfMonth().get()}"
         Log.i("Alaa","Got date as $date")
         httpClient.addNetworkInterceptor(RequestInterceptor(date))
         httpClient.connectTimeout(30, TimeUnit.SECONDS)
